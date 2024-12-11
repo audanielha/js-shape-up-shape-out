@@ -1,7 +1,14 @@
 let shapeContainer = document.querySelector(".shape-container");
+
+// RECTANGLE 
 let rectangleButton = document.querySelector("#rectangleSubmit");
 let rectangleHeight = document.querySelector("#rectangleHeight");
 let rectangleWidth = document.querySelector("#rectangleWidth");
+
+// SQUARE
+let squareSubmit = document.querySelector("#squareSubmit");
+let squareHeightWidth = document.querySelector("#squareHeightWidth");
+
 
 
 class Shape{
@@ -24,6 +31,18 @@ class Shape{
     }
 }
 
+class Square extends Shape{
+    constructor(size){
+        super(size, size)
+    }
+}
+
 rectangleButton.addEventListener("click", ()=>{
     new Shape(rectangleHeight.value,rectangleWidth.value)
+    rectangleHeight.value = " ";
+    rectangleWidth.value = " ";
+})
+
+squareSubmit.addEventListener("click", ()=>{
+    new Square(squareHeightWidth.value);
 })
