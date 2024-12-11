@@ -1,0 +1,13 @@
+.shape-container{
+    height: 500px;
+    background-color: rgb(33, 159, 201);
+    position: relative;
+}
+
+.addShapeContainer{
+    margin-bottom: 40px;
+}
+
+.test{
+    background-color: green;
+}
