@@ -12,6 +12,15 @@
     margin-bottom: 40px;
 }
 
-.test{
+.green{
     background-color: green;
+}
+.blue{
+    background-color: blue;
+}
+.orange{
+    background-color: orange;
+}
+.yellow{
+    background-color: yellow;
 }

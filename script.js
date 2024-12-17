@@ -24,7 +24,7 @@ class Shape{
         this.height = height;
         this.width = width;
         this.div = document.createElement("div");
-        this.div.classList = "test";
+        this.div.classList = "green";
         this.div.style.display = "block";
         this.div.style.position = "absolute";
         this.div.style.height = `${this.height}px`;
@@ -42,23 +42,25 @@ class Shape{
 class Square extends Shape{
     constructor(height){
         super(height, height);
+        this.div.classList = "blue";
     }
 }
 
 class Circle extends Shape{
     constructor(height){
         super(height, height)
-        this.div.style.borderRadius="50%"
+        this.div.classList = "orange";
+        this.div.style.borderRadius="50%";
     }
 }
 
 class Triangle extends Shape{
     constructor(x){
         super(x, x)
-        this.div.classList.remove("test");
+        this.div.classList.remove("green");
         this.div.style.borderLeft= `${x}px solid transparent`;
         this.div.style.borderRight = `${x}px solid transparent`;
-        this.div.style.borderBottom = `${x * 2}px solid #000`;
+        this.div.style.borderBottom = `${x * 2}px solid yellow`;
     }
 }
 rectangleButton.addEventListener("click", ()=>{
