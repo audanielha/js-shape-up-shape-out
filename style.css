@@ -3,6 +3,10 @@
     background-color: rgb(33, 159, 201);
     position: relative;
 }
+.stats-container{
+    height: 500px;
+    background: beige;
+}
 
 .addShapeContainer{
     margin-bottom: 40px;

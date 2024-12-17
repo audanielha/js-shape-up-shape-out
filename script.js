@@ -9,7 +9,15 @@ let rectangleWidth = document.querySelector("#rectangleWidth");
 let squareSubmit = document.querySelector("#squareSubmit");
 let squareHeightWidth = document.querySelector("#squareHeightWidth");
 
+// CIRCLE
+let circleSubmit = document.querySelector("#circleSubmit");
+let circleHeightWidth = document.querySelector("#circleHeightWidth");
 
+// TRIANGLE
+let triangleSubmit = document.querySelector("#triangleSubmit");
+let triangleHeightWidth = document.querySelector("#triangleHeightWidth");
+
+console.log(circleHeightWidth)
 
 class Shape{
     constructor(height, width){
@@ -23,7 +31,7 @@ class Shape{
         this.div.style.width = `${this.width}px`;
         this.div.style.left = `${this.randomNumber()}px`;
         this.div.style.top = `${this.randomNumber()}px`;
-        shapeContainer.appendChild(this.div)
+        shapeContainer.appendChild(this.div);
     }
 
     randomNumber(){
@@ -32,17 +40,48 @@ class Shape{
 }
 
 class Square extends Shape{
-    constructor(size){
-        super(size, size)
+    constructor(height){
+        super(height, height);
     }
 }
 
+class Circle extends Shape{
+    constructor(height){
+        super(height, height)
+        this.div.style.borderRadius="50%"
+    }
+}
+
+class Triangle extends Shape{
+    constructor(x){
+        super(x, x)
+        this.div.classList.remove("test");
+        this.div.style.borderLeft= `${x}px solid transparent`;
+        this.div.style.borderRight = `${x}px solid transparent`;
+        this.div.style.borderBottom = `${x * 2}px solid #000`;
+    }
+}
 rectangleButton.addEventListener("click", ()=>{
     new Shape(rectangleHeight.value,rectangleWidth.value)
     rectangleHeight.value = " ";
     rectangleWidth.value = " ";
-})
+});
 
-squareSubmit.addEventListener("click", ()=>{
-    new Square(squareHeightWidth.value);
-})
+squareSubmit.addEventListener("click", (event)=>{
+    event.preventDefault();
+   new Square(squareHeightWidth.value)
+   squareHeightWidth.value = " ";
+});
+
+circleSubmit.addEventListener("click", (event)=>{
+    event.preventDefault();
+   new Circle(circleHeightWidth.value)
+   circleHeightWidth.value = " ";
+});
+
+triangleSubmit.addEventListener("click", (event)=>{
+    event.preventDefault();
+   new Triangle(triangleHeightWidth.value)
+   triangleHeightWidth.value = " ";
+});
+
